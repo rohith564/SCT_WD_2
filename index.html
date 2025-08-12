@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+.button{
+    padding:15px 20px;
+    margin:5px 4px;
+    background-color:#FFF600 ;
+    border-radius:5px;
+
+ }
+
+#equal{
+    padding:15px 50px;
+    margin:8px 5px;
+    background-color:rgba(255,0,0,0.8)}
+
+main{
+    font-weight: bold;
+    font-size: 1rem;
+    margin-left: 10px;
+    
+}
+
+*{
+    background-color: #D6FFFF;
+}
+
+h1{
+    font-size: 40px;
+    text-align: center;
+    background-color:yellow;
+    border:2.5px solid black;
+    box-shadow: 4px 5px rgba(50,50,50,0.5);
+    margin: 5px;
+    
+}
+
+#ip{
+    width: 10px 30px;
+    margin:10px;
+    border: 1px solid black;
+    padding: 10px;
+}
+ 
+ body{
+     border:2px solid black;
+     padding:2px;
+ }
+ </style>
+</head>
+<body>
+    <h1>Calculator</h1>
+    <br />
+    <hr />
+    <br />
+    <p id="ip"></p>
+
+<main>
+    <button class="button" id="9" onclick="calc(event)">9</button>
+<button class="button" id="8" onclick="calc(event)">8</button>
+<button class="button" id="7" onclick="calc(event)">7</button>
+    <button class="button" onclick="calc(event)">-</button>
+    <button class="button" onclick="calc(event)">/</button></button>
+
+    <br />
+    <button class="button" id="6" onclick="calc(event)">6</button>
+    <button class="button" id="5" onclick="calc(event)">5</button>
+    <button class="button" id="4" onclick="calc(event)">4</button>
+    <button class="button" onclick="calc(event)">+</button>
+    <button class="button" onclick="calc(event)">*</button>
+
+
+    <br />
+    <button class="button" id="3" onclick="calc(event)">3</button>
+    <button class="button" id="2" onclick="calc(event)">2</button>
+    <button class="button" id="1" onclick="calc(event)">1</button>
+    
+    <button class="button" id="equal" onclick="calculate()">=</button>
+    
+    <button class="button" onclick="calc(event)">0</button>
+    <button class="button" onclick="calc(event)">.</button>
+    <button class="button" onclick="undo1()">Back</button>
+    <button class="button" onclick="clear1()">clear all</button>
+    
+       
+ 
+</main>
+
+<script>
+var i=document.getElementById("ip")
+
+function calc(event){
+    i.append(event.target.textContent)
+
+}
+function calculate(){
+    var i=document.getElementById("ip")
+    b=eval(i.textContent)
+    i.textContent=b
+}
+function clear1(){
+        
+        
+    i.textContent="0"
+    
+}
+ 
+function undo1(){
+    var b=i.textContent
+    var l=b.length
+    var n="";
+    for(m=0;m<l-1;m++){
+        n=n+b[m]
+    }
+    i.textContent=n
+}
+</script>
+</body>
+      </html>
